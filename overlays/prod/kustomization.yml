@@ -1,0 +1,13 @@
+bases:
+- ../../base
+
+resources:
+- service.yml
+
+namePrefix: prod-
+
+commonLabels:
+  env: prod
+
+patches:
+  - replica-count.yml

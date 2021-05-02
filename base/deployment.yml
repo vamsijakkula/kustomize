@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-whale
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-whale-app
+  template:
+    metadata:
+      name: hello-whale-pod
+      labels:
+        app: hello-whale-app
+    spec:
+      containers:
+      - name: hello-whale-container
+        image: vamsijakkula/hellowhale:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
